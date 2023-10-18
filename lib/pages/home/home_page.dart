@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:untitled/pages/home/niveles_de_actividades.dart';
 import 'package:untitled/pages/home/principal.dart';
-import 'package:untitled/pages/home/saludo_inicio.dart';
 import 'pantalla_de_carga.dart';
 import 'package:untitled/utils/colors.dart' as utils;
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   MyHomePageState createState() => MyHomePageState();
 }
@@ -17,7 +17,7 @@ class MyHomePageState extends State<MyHomePage>{
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 1), () {
+    Future.delayed(const Duration(seconds: 1), () {
       setState(() {
         isLoading = false;
       });
@@ -35,7 +35,7 @@ class MyHomePageState extends State<MyHomePage>{
           return Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/img/fondoNM.png',
                 ),
@@ -45,7 +45,7 @@ class MyHomePageState extends State<MyHomePage>{
             // Aquí agregas el contenido del contenedor
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   width: 350,
                   height: 300,
                   child:Image(
@@ -76,7 +76,7 @@ class MyHomePageState extends State<MyHomePage>{
                                           color: Colors.white.withOpacity(0.5),
                                           spreadRadius: 5,
                                           blurRadius: 7,
-                                          offset: Offset(0, 3), // changes position of shadow
+                                          offset: const Offset(0, 3), // changes position of shadow
                                         ),
                                       ],
                                     ),
@@ -87,7 +87,7 @@ class MyHomePageState extends State<MyHomePage>{
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         crossAxisAlignment: CrossAxisAlignment.center,
                                         children: [
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 100,
                                             width: 100,
                                             child: Image(
@@ -96,17 +96,17 @@ class MyHomePageState extends State<MyHomePage>{
                                               ),
                                             ),
                                           ),
-                                          Text(
+                                          const Text(
                                             "INICIO DE SESIÓN",
                                             style: TextStyle(
                                               color: Colors.black,
                                               fontSize: 20
                                             ),
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 20,
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             width: 300,
                                             height: 80,
                                             child: TextField(
@@ -124,7 +124,7 @@ class MyHomePageState extends State<MyHomePage>{
                                               ),
                                             ),
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             width: 300,
                                             height: 80,
                                             child: TextField(
@@ -147,7 +147,7 @@ class MyHomePageState extends State<MyHomePage>{
                                           MaterialButton(
                                             color: utils.Colors.azulitoArriba,
                                             height: 50,
-                                            child: Text(
+                                            child: const Text(
                                               "INICIAR SESIÓN",
                                               style: TextStyle(
                                                 fontSize: 20,
