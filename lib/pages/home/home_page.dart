@@ -3,17 +3,16 @@ import 'package:flutter/services.dart';
 import 'package:untitled/pages/home/principal.dart';
 import 'pantalla_de_carga.dart';
 import 'package:untitled/utils/colors.dart' as utils;
-
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+  MyHomePage({super.key});
 
   @override
   MyHomePageState createState() => MyHomePageState();
 }
-
 class MyHomePageState extends State<MyHomePage>{
   bool isLoading = true;
 
+  final passwordController= TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -24,12 +23,14 @@ class MyHomePageState extends State<MyHomePage>{
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft,DeviceOrientation.landscapeRight]);
     return isLoading
         ? Pantalla_de_Carga()
         : Scaffold(
+
       body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return Container(
@@ -81,15 +82,15 @@ class MyHomePageState extends State<MyHomePage>{
                                       ],
                                     ),
                                       alignment: Alignment.center,
-                                      height: 400,
+                                      height: 300,
                                       width: 450,
                                       child: Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         crossAxisAlignment: CrossAxisAlignment.center,
                                         children: [
                                           const SizedBox(
-                                            height: 100,
-                                            width: 100,
+                                            height: 50,
+                                            width: 50,
                                             child: Image(
                                               image: AssetImage(
                                                 "assets/img/logo.png"
@@ -114,31 +115,30 @@ class MyHomePageState extends State<MyHomePage>{
                                                 border: OutlineInputBorder(
                                                 ),
                                                 label: Text(
-                                                  "Ingresa el usuario"
+                                                  "Ingresa la contraseña"
                                                 ),
                                                 icon: Icon(
                                                   size: 20,
-                                                  Icons.account_circle,
+                                                  Icons.lock_rounded,
                                                   color: utils.Colors.azulitoArriba,
                                                 ),
                                               ),
+                                              obscureText: true,
                                             ),
                                           ),
                                           const SizedBox(
                                             width: 300,
                                             height: 80,
                                             child: TextField(
-                                              obscureText: true,
                                               decoration: InputDecoration(
                                                 border: OutlineInputBorder(
-
                                                 ),
                                                 label: Text(
-                                                    "Ingresa la contraseña"
+                                                    "Ingresa el usuario"
                                                 ),
                                                 icon: Icon(
                                                   size: 20,
-                                                  Icons.lock_rounded,
+                                                  Icons.account_circle,
                                                   color: utils.Colors.azulitoArriba,
                                                 ),
                                               ),
