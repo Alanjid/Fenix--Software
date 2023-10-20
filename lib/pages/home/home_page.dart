@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:untitled/pages/home/act_afectividad.dart';
+import 'package:untitled/pages/home/actividades_rutina_diaria.dart';
+import 'package:untitled/pages/home/aprende_poy_real.dart';
 import 'package:untitled/pages/home/principal.dart';
+import 'package:untitled/pages/home/tareas_completadas.dart';
 import 'pantalla_de_carga.dart';
 import 'package:untitled/utils/colors.dart' as utils;
 class MyHomePage extends StatefulWidget {
@@ -155,8 +159,8 @@ class MyHomePageState extends State<MyHomePage>{
                                               ),
                                             ),
                                               onPressed: (){
-                                                //Navigator.push(context, MaterialPageRoute(builder: (context) => saludo()));
-                                                Navigator.push(context, MaterialPageRoute(builder: (context) => principal()));
+                                                Navigator.push(context, MaterialPageRoute(builder: (context) => actividades_rutina_diaria()));
+                                                //Navigator.push(context, MaterialPageRoute(builder: (context) => principal()));
                                           }),
                                         ],
                                       ),

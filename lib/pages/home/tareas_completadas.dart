@@ -1,11 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:stroke_text/stroke_text.dart';
+
+import 'audios.dart';
+import 'grabar_instrucciones.dart';
 class tareas_comp_diarias extends StatelessWidget {
+
+  String Texto_TC="HAS COMPLETADO TUS ACTIVIDADES DEL DIA, VUELVE MAÑANA PARA SEGUIR TRABAJANDO.";
+  String audioUrl="";
+  ValueNotifier<bool> isAudioPlaying = ValueNotifier<bool>(false);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            sonido_grabar(
+              texto_grabar: Texto_TC,
+              audioPath: audioUrl,
+            ),
+            AutoPlayAudioWidget(
+              audioPath: audioUrl,
+            ),
+            SizedBox(width: 300),
+            Image.asset(
+              'assets/img/logo.png',
+              width: 60,
+              height: 60,
+            ),
+          ],
+        ),
         elevation: 0,
         toolbarHeight: 50,
       ),
@@ -14,7 +40,7 @@ class tareas_comp_diarias extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/img/fondo.gif'),
+              image: AssetImage('assets/img/fondoNM.png'),
               fit: BoxFit.cover
           ),
         ),

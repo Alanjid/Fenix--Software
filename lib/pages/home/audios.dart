@@ -12,9 +12,9 @@ class AutoPlayAudioWidget extends StatefulWidget {
   _AutoPlayAudioWidgetState createState() => _AutoPlayAudioWidgetState();
 }
 
-class _AutoPlayAudioWidgetState extends State<AutoPlayAudioWidget> {
+class _AutoPlayAudioWidgetState extends State<AutoPlayAudioWidget> with WidgetsBindingObserver {
   late Soundpool soundpool;
-  late int soundId;
+  int? soundId;
   late Timer audioTimer;
 
   @override
@@ -23,6 +23,7 @@ class _AutoPlayAudioWidgetState extends State<AutoPlayAudioWidget> {
     soundpool = Soundpool();
     loadAudio();
     startAudioTimer();
+    WidgetsBinding.instance.addObserver(this); // Agregar el observador
   }
 
   Future<void> loadAudio() async {
@@ -38,18 +39,28 @@ class _AutoPlayAudioWidgetState extends State<AutoPlayAudioWidget> {
   }
 
   Future<void> playAudio() async {
-    soundpool.play(soundId);
+    if (soundId != null) {
+      soundpool.play(soundId!);
+    }
+  }
+
+  @override
+  void stopAudio() {
+    // Detiene el audio utilizando el ID del sonido
+    soundpool.stop(soundId!);
   }
 
   @override
   void dispose() {
-    soundpool.release();
-    audioTimer.cancel(); // Detener el temporizador al finalizar
+    if (soundId != null) {
+      soundpool.release();
+    }
+    audioTimer.cancel();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(); // No devuelve nada en el Scaffold
+    return Container();
   }
 }

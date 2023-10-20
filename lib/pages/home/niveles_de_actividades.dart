@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:stroke_text/stroke_text.dart';
 import 'package:untitled/pages/home/grabar_instrucciones.dart';
 
+import 'audios.dart';
+
 
 class niveles_actividades extends StatelessWidget {
   String texto_dictar="Realizamos las siguientes actividades";
-  String audioUrl="";
+  String audioUrl="assets/audios/actividades.mp3";
+  ValueNotifier<bool> isAudioPlaying = ValueNotifier<bool>(false);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,6 +22,9 @@ class niveles_actividades extends StatelessWidget {
             sonido_grabar(
                 texto_grabar: texto_dictar,
               audioPath: audioUrl,
+            ),
+            AutoPlayAudioWidget(
+                audioPath: audioUrl,
             ),
             SizedBox(width: 8),
             Image.asset(

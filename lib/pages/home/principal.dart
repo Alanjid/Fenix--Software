@@ -18,6 +18,8 @@ class _principalState extends State<principal> {
   double _volume = 0.5;// Agrega _volume como una propiedad y establece el valor inicial
   String Texto_Menu = "Este es el menu";
   String audioUrl = 'assets/audios/menu.mp3';
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +34,9 @@ class _principalState extends State<principal> {
                 texto_grabar: Texto_Menu,
               audioPath: audioUrl,
             ),
-            AutoPlayAudioWidget(audioPath: audioUrl),
+            AutoPlayAudioWidget(
+                audioPath: audioUrl,
+            ),
             SizedBox(width: 300),
             info_pictogramas(img1: "assets/img/alimento.png"),
             Image.asset(
@@ -73,8 +77,13 @@ class _principalState extends State<principal> {
                       children: [
                         IconButton(
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(
-                                builder: (context) => niveles_actividades()));
+
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => niveles_actividades(),
+                              ),
+                            );
                           },
                           icon: Image.asset('assets/img/aprendizaje.png'),
                           iconSize: 250,
