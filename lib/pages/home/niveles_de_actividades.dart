@@ -5,6 +5,7 @@ import 'package:untitled/pages/home/grabar_instrucciones.dart';
 
 class niveles_actividades extends StatelessWidget {
   String texto_dictar="Realizamos las siguientes actividades";
+  String audioUrl="";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +16,8 @@ class niveles_actividades extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             sonido_grabar(
-                texto_grabar: texto_dictar
+                texto_grabar: texto_dictar,
+              audioPath: audioUrl,
             ),
             SizedBox(width: 8),
             Image.asset(

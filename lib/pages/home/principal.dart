@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:stroke_text/stroke_text.dart';
+import 'package:untitled/pages/home/audios.dart';
 import 'package:untitled/pages/home/grabar_instrucciones.dart';
 import 'package:flutter/widgets.dart';
-import 'package:clickable_list_wheel_view/clickable_list_wheel_widget.dart';
-import 'package:clickable_list_wheel_view/measure_size.dart';
 import 'package:untitled/pages/home/info_actividades.dart';
 import 'package:untitled/pages/home/niveles_de_actividades.dart';
 import 'package:untitled/utils/colors.dart' as utils;
@@ -15,8 +15,9 @@ class principal extends StatefulWidget {
 }
 
 class _principalState extends State<principal> {
-  double _volume = 0.5;
-  String Texto_Menu="Este es el menu";// Agrega _volume como una propiedad y establece el valor inicial
+  double _volume = 0.5;// Agrega _volume como una propiedad y establece el valor inicial
+  String Texto_Menu = "Este es el menu";
+  String audioUrl = 'assets/audios/menu.mp3';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,9 +28,11 @@ class _principalState extends State<principal> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-              sonido_grabar(
-                  texto_grabar: Texto_Menu
-              ),
+            sonido_grabar(
+                texto_grabar: Texto_Menu,
+              audioPath: audioUrl,
+            ),
+            AutoPlayAudioWidget(audioPath: audioUrl),
             SizedBox(width: 300),
             info_pictogramas(img1: "assets/img/alimento.png"),
             Image.asset(
@@ -41,8 +44,14 @@ class _principalState extends State<principal> {
         ),
       ),
       body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
+        width: MediaQuery
+            .of(context)
+            .size
+            .width,
+        height: MediaQuery
+            .of(context)
+            .size
+            .height,
         decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage('assets/img/fondoNM.png'),
@@ -63,8 +72,9 @@ class _principalState extends State<principal> {
                     Row(
                       children: [
                         IconButton(
-                          onPressed: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => niveles_actividades()));
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (context) => niveles_actividades()));
                           },
                           icon: Image.asset('assets/img/aprendizaje.png'),
                           iconSize: 250,
@@ -89,7 +99,7 @@ class _principalState extends State<principal> {
                     Row(
                       children: [
                         IconButton(
-                          onPressed: (){
+                          onPressed: () {
                             //Navigator.push(context, MaterialPageRoute(builder: (context) => rutina_diaria()));
                           },
                           icon: Image.asset('assets/img/rutinadiaria.png'),
@@ -115,7 +125,7 @@ class _principalState extends State<principal> {
                     Row(
                       children: [
                         IconButton(
-                          onPressed: (){
+                          onPressed: () {
 
                           },
                           icon: Image.asset('assets/img/avances.png'),
@@ -138,6 +148,6 @@ class _principalState extends State<principal> {
           ),
         ),
       ),
-      );
+    );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stroke_text/stroke_text.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:untitled/pages/home/grabar_instrucciones.dart';
 import 'package:untitled/pages/home/principal.dart';
 import 'package:untitled/utils/colors.dart' as utils;
@@ -13,6 +12,7 @@ class saludo extends StatefulWidget {
 class _saludoState extends State<saludo> {
   double _volume = 0.5;
   String texto_guiado="Bienvenido, @";// Agrega _volume como una propiedad y establece el valor inicial
+  String audioUrl="";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +45,8 @@ class _saludoState extends State<saludo> {
                 Column(
                   children: [
                     sonido_grabar(
-                        texto_grabar: texto_guiado
+                        texto_grabar: texto_guiado,
+                      audioPath: audioUrl,
                     ),
                     StrokeText(
                       text: texto_guiado,
