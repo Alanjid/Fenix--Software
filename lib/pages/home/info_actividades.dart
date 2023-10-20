@@ -14,108 +14,26 @@ class info_pictogramas extends StatelessWidget{
                 builder: (BuildContext context){
                  return AlertDialog(
                       title: Text("Pictogramas"),
-                   content: Column(
+                   content: Row(
+                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                     crossAxisAlignment: CrossAxisAlignment.center,
                      mainAxisSize: MainAxisSize.max,
                      children: [
                           Container(
-                            width: 600,
-                            height: 300,
-                            color: Colors.white,
-                            child: Row(
+                            width: 300,
+                            height: 245,
+                            //Contenedor de Primera columna de pictogramas
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                                //Primer pictograma
                                 Container(
                                   width: 300,
-                                  height: 300,
-                                  child: Column(
-                                    children: [
-                                      Column(
-                                        children:
-                                        [
-                                          SizedBox(height: 20,),
-                                          Row(
-                                            children: [
-                                              Container(
-                                                width: 50,
-                                                height: 50,
-                                                decoration: BoxDecoration(
-                                                  border: Border.all(color: Colors.black, width: 2.0), // Configura el borde negro
-                                                ),
-                                                child: Image(
-                                                  image: AssetImage("assets/img/alimento.png"),
-                                                ),
-                                              ),
-                                              SizedBox(width: 20,),
-                                              Text("ALIMENTOS"),
-
-                                            ],
-                                          ),
-                                          SizedBox(height: 20,),
-                                          Row(
-                                            children: [
-                                              Container(
-                                                width: 50,
-                                                height: 50,
-                                                decoration: BoxDecoration(
-                                                  border: Border.all(color: Colors.black, width: 2.0), // Configura el borde negro
-                                                ),
-                                                child: Image(
-                                                  image: AssetImage("assets/img/bebidas.png"),
-                                                ),
-                                              ),
-                                              SizedBox(width: 20,),
-                                              Text("BEBIDAS"),
-
-                                            ],
-                                          ),
-                                          SizedBox(height: 20),
-                                          Row(
-                                            children: [
-                                              Container(
-                                                width: 50,
-                                                height: 50,
-                                                decoration: BoxDecoration(
-                                                  border: Border.all(color: Colors.black, width: 2.0), // Configura el borde negro
-                                                ),
-                                                child: Image(
-                                                  image: AssetImage("assets/img/acciones.png"),
-                                                ),
-                                              ),
-                                              SizedBox(width: 20,),
-                                              Text("ACCIONES"),
-
-                                            ],
-                                          ),
-                                          SizedBox(height: 20,),
-                                          Row(
-                                            children: [
-                                              Container(
-                                                width: 50,
-                                                height: 50,
-                                                decoration: BoxDecoration(
-                                                  border: Border.all(color: Colors.black, width: 2.0), // Configura el borde negro
-                                                ),
-                                                child: Image(
-                                                  image: AssetImage("assets/img/partes del cuerpo.png"),
-                                                ),
-                                              ),
-                                              SizedBox(width: 20,),
-                                              Text("PARTES DEL CUERPO"),
-
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  width: 300,
-                                  height: 300,
                                   child: Column(
                                     children: [
                                       Row(
                                         children: [
-                                          SizedBox(height: 90,),
                                           Container(
                                             width: 50,
                                             height: 50,
@@ -123,27 +41,80 @@ class info_pictogramas extends StatelessWidget{
                                               border: Border.all(color: Colors.black, width: 2.0), // Configura el borde negro
                                             ),
                                             child: Image(
-                                              image: AssetImage("assets/img/prendas.png"),
+                                              image: AssetImage("assets/img/alimento.png"),
                                             ),
                                           ),
                                           SizedBox(width: 20,),
-                                          Text("PRENDAS DE VESTIR"),
-
+                                          Text("ALIMENTOS"),
                                         ],
                                       ),
-                                      SizedBox(height: 170,),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  width: 300,
+                                  child: Column(
+                                    children: [
                                       Row(
                                         children: [
-                                          SizedBox(
-                                            width: 200,
+                                          Container(
+                                            width: 50,
+                                            height: 50,
+                                            decoration: BoxDecoration(
+                                              border: Border.all(color: Colors.black, width: 2.0), // Configura el borde negro
+                                            ),
+                                            child: Image(
+                                              image: AssetImage("assets/img/bebidas.png"),
+                                            ),
                                           ),
-                                          ElevatedButton(
-                                            child: const Text("CERRAR"),
-                                            onPressed: (){
-                                              Navigator.pop(context);
-                                            },
-
+                                          SizedBox(width: 20,),
+                                          Text("BEBIDAS"),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  width: 300,
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                            width: 50,
+                                            height: 50,
+                                            decoration: BoxDecoration(
+                                              border: Border.all(color: Colors.black, width: 2.0), // Configura el borde negro
+                                            ),
+                                            child: Image(
+                                              image: AssetImage("assets/img/acciones.png"),
+                                            ),
                                           ),
+                                          SizedBox(width: 20,),
+                                          Text("ACCIONES"),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  width: 300,
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                            width: 50,
+                                            height: 50,
+                                            decoration: BoxDecoration(
+                                              border: Border.all(color: Colors.black, width: 2.0), // Configura el borde negro
+                                            ),
+                                            child: Image(
+                                              image: AssetImage("assets/img/partes del cuerpo.png"),
+                                            ),
+                                          ),
+                                          SizedBox(width: 20,),
+                                          Text("PARTES DEL CUERPO"),
                                         ],
                                       ),
                                     ],
@@ -152,8 +123,56 @@ class info_pictogramas extends StatelessWidget{
                               ],
                             ),
                           ),
+                       Container(
+                         child:Column(
+                           children: [
+                             Container(
+                               width: 300,
+                               height: 245,
+                               child: Column(
+                                 children: [
+                                   SizedBox(height: 9,),
+                                   Row(
+                                     children: [
+                                       Container(
+                                         width: 50,
+                                         height: 50,
+                                         decoration: BoxDecoration(
+                                           border: Border.all(color: Colors.black, width: 2.0), // Configura el borde negro
+                                         ),
+                                         child: Image(
+                                           image: AssetImage("assets/img/partes del cuerpo.png"),
+                                         ),
+                                       ),
+                                       SizedBox(width: 20,),
+                                       Text("PARTES DEL CUERPO"),
+                                     ],
+                                   ),
+                                   SizedBox(height: 138,),
+                                   Row(
+                                     children: [
+                                       SizedBox(
+                                         width: 200,
+                                       ),
+                                       ElevatedButton(
+                                         child: const Text("CERRAR"),
+                                         onPressed: (){
+                                           Navigator.pop(context);
+                                         },
+
+                                       ),
+                                     ],
+                                   ),
+                                 ],
+                               ),
+                             ),
+                           ],
+                         ) ,
+                       )
+
                      ],
                    ),
+
                  );
                 }
             );
