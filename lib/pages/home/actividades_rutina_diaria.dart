@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stroke_text/stroke_text.dart';
+import 'package:untitled/pages/home/act_afectividad.dart';
 import 'package:untitled/pages/home/aprende_poy_real.dart';
 import 'package:untitled/pages/home/grabar_instrucciones.dart';
 import 'audios.dart';
@@ -68,7 +69,7 @@ class actividades_rutina_diaria extends StatelessWidget {
                 IconButton(
                   iconSize: 120,
                   onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => actividades_rutina_diaria()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => afectividad_realista()));
                   },
                   icon: Image(
                     image: AssetImage(

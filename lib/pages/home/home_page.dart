@@ -159,8 +159,8 @@ class MyHomePageState extends State<MyHomePage>{
                                               ),
                                             ),
                                               onPressed: (){
-                                                Navigator.push(context, MaterialPageRoute(builder: (context) => actividades_rutina_diaria()));
-                                                //Navigator.push(context, MaterialPageRoute(builder: (context) => principal()));
+                                                //Navigator.push(context, MaterialPageRoute(builder: (context) => actividades_rutina_diaria()));
+                                                Navigator.push(context, MaterialPageRoute(builder: (context) => principal()));
                                           }),
                                         ],
                                       ),

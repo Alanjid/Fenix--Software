@@ -17,7 +17,7 @@ class afectividad_realista extends StatefulWidget {
 class afre extends State {
   @override
   bool visible=false,visible2=false;
-  String Texto_act="¿Les gusta hacer amigos?";
+  String Texto_act="Estos dos pequeños son amigos, escogemos los pictogramas que pueden ser los amigos de ellos?";
   String audioUrl="assets/audios/audio_act_afectividad.mp3";
   Widget build(BuildContext context) {
     if(visible==true && visible2==true) {
@@ -49,7 +49,7 @@ class afre extends State {
               audioPath: audioUrl,
             ),
             StrokeText(
-              text: Texto_act,
+              text: "¿Les gusta hacer amigos?",
               strokeWidth: 6,
               strokeColor: Colors.orange,
               textStyle: TextStyle(

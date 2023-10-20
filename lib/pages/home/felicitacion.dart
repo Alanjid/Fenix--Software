@@ -4,6 +4,7 @@ import 'package:confetti/confetti.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stroke_text/stroke_text.dart';
+import 'package:untitled/pages/home/actividades_rutina_diaria.dart';
 import 'package:untitled/pages/home/niveles_de_actividades.dart';
 class felicitacion extends StatefulWidget {
 
@@ -26,7 +27,7 @@ class felicitacion2 extends State {
 
   Widget build(BuildContext context) {
     Future.delayed(Duration(seconds:6), () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => niveles_actividades()));
+      Navigator.push(context, MaterialPageRoute(builder: (context) => actividades_rutina_diaria()));
     });
     controller.addListener(() {
       play=controller.state==ConfettiControllerState.playing;

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:stroke_text/stroke_text.dart';
+import 'package:untitled/pages/home/actividades_rutina_diaria.dart';
 import 'package:untitled/pages/home/audios.dart';
 import 'package:untitled/pages/home/grabar_instrucciones.dart';
 import 'package:flutter/widgets.dart';
@@ -109,7 +110,7 @@ class _principalState extends State<principal> {
                       children: [
                         IconButton(
                           onPressed: () {
-                            //Navigator.push(context, MaterialPageRoute(builder: (context) => rutina_diaria()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => actividades_rutina_diaria()));
                           },
                           icon: Image.asset('assets/img/rutinadiaria.png'),
                           iconSize: 250,
