@@ -3,7 +3,6 @@ import 'package:stroke_text/stroke_text.dart';
 import 'package:untitled/pages/home/act_afectividad.dart';
 import 'package:untitled/pages/home/aprende_poy_real.dart';
 import 'package:untitled/pages/home/grabar_instrucciones.dart';
-import 'audios.dart';
 
 
 class actividades_rutina_diaria extends StatelessWidget {
@@ -22,9 +21,6 @@ class actividades_rutina_diaria extends StatelessWidget {
           children: [
             sonido_grabar(
               texto_grabar: texto_dictar,
-              audioPath: audioUrl,
-            ),
-            AutoPlayAudioWidget(
               audioPath: audioUrl,
             ),
             SizedBox(width: 8),

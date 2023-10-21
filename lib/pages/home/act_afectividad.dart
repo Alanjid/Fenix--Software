@@ -4,8 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:stroke_text/stroke_text.dart';
 import 'package:untitled/pages/home/felicitacion.dart';
 import 'package:soundpool/soundpool.dart';
-
-import 'audios.dart';
 import 'grabar_instrucciones.dart';
 
 class afectividad_realista extends StatefulWidget {
@@ -19,6 +17,12 @@ class afre extends State {
   bool visible=false,visible2=false;
   String Texto_act="Estos dos pequeños son amigos, escogemos los pictogramas que pueden ser los amigos de ellos?";
   String audioUrl="assets/audios/audio_act_afectividad.mp3";
+
+  void initState() {
+    super.initState();
+    startTimer();
+  }
+
   Widget build(BuildContext context) {
     if(visible==true && visible2==true) {
       Future.delayed(Duration(seconds:2), () {
@@ -43,9 +47,6 @@ class afre extends State {
           children: [
             sonido_grabar(
               texto_grabar: Texto_act,
-              audioPath: audioUrl,
-            ),
-            AutoPlayAudioWidget(
               audioPath: audioUrl,
             ),
             StrokeText(
@@ -253,6 +254,19 @@ class afre extends State {
 
     );
     throw UnimplementedError();
+  }
+  Future<void> audioFondo() async {
+    Soundpool pool = Soundpool();
+
+    int soundId = await rootBundle.load(audioUrl).then((ByteData soundData) {
+      return pool.load(soundData);
+    });
+    int streamId = await pool.play(soundId);
+  }
+  void startTimer() {
+    Future.delayed(const Duration(seconds: 1), () {
+      audioFondo();
+    });
   }
 }
 Future<void> soundpool() async {

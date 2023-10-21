@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stroke_text/stroke_text.dart';
-
-import 'audios.dart';
 import 'grabar_instrucciones.dart';
 class tareas_comp_diarias extends StatelessWidget {
 
@@ -19,9 +17,6 @@ class tareas_comp_diarias extends StatelessWidget {
           children: [
             sonido_grabar(
               texto_grabar: Texto_TC,
-              audioPath: audioUrl,
-            ),
-            AutoPlayAudioWidget(
               audioPath: audioUrl,
             ),
             SizedBox(width: 300),

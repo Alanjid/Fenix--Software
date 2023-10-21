@@ -159,7 +159,7 @@ class MyHomePageState extends State<MyHomePage>{
                                               ),
                                             ),
                                               onPressed: (){
-                                                //Navigator.push(context, MaterialPageRoute(builder: (context) => actividades_rutina_diaria()));
+                                                //Navigator.push(context, MaterialPageRoute(builder: (context) => apren_pony_lenguaje_real()));
                                                 Navigator.push(context, MaterialPageRoute(builder: (context) => principal()));
                                           }),
                                         ],

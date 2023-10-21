@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:soundpool/soundpool.dart';
 import 'package:stroke_text/stroke_text.dart';
 import 'package:untitled/pages/home/actividades_rutina_diaria.dart';
-import 'package:untitled/pages/home/audios.dart';
 import 'package:untitled/pages/home/grabar_instrucciones.dart';
 import 'package:flutter/widgets.dart';
 import 'package:untitled/pages/home/info_actividades.dart';
@@ -20,6 +20,10 @@ class _principalState extends State<principal> {
   String Texto_Menu = "Este es el menu";
   String audioUrl = 'assets/audios/menu.mp3';
 
+  void initState() {
+    super.initState();
+    startTimer();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +38,6 @@ class _principalState extends State<principal> {
             sonido_grabar(
                 texto_grabar: Texto_Menu,
               audioPath: audioUrl,
-            ),
-            AutoPlayAudioWidget(
-                audioPath: audioUrl,
             ),
             SizedBox(width: 300),
             info_pictogramas(img1: "assets/img/alimento.png"),
@@ -159,5 +160,18 @@ class _principalState extends State<principal> {
         ),
       ),
     );
+  }
+  Future<void> audioFondo() async {
+    Soundpool pool = Soundpool();
+
+    int soundId = await rootBundle.load(audioUrl).then((ByteData soundData) {
+      return pool.load(soundData);
+    });
+    int streamId = await pool.play(soundId);
+  }
+  void startTimer() {
+    Future.delayed(const Duration(seconds: 1), () {
+      audioFondo();
+    });
   }
 }
