@@ -27,7 +27,7 @@ class felicitacion2 extends State {
 
   Widget build(BuildContext context) {
     Future.delayed(Duration(seconds:6), () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => actividades_rutina_diaria()));
+      Navigator.push(context, MaterialPageRoute(builder: (context) => rutina_diaria()));
     });
     controller.addListener(() {
       play=controller.state==ConfettiControllerState.playing;

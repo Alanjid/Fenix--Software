@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:untitled/pages/home/act_afectividad.dart';
@@ -119,15 +120,14 @@ class MyHomePageState extends State<MyHomePage>{
                                                 border: OutlineInputBorder(
                                                 ),
                                                 label: Text(
-                                                  "Ingresa la contraseña"
+                                                    "Ingresa el usuario"
                                                 ),
                                                 icon: Icon(
                                                   size: 20,
-                                                  Icons.lock_rounded,
+                                                  Icons.account_circle,
                                                   color: utils.Colors.azulitoArriba,
                                                 ),
                                               ),
-                                              obscureText: true,
                                             ),
                                           ),
                                           const SizedBox(
@@ -138,14 +138,15 @@ class MyHomePageState extends State<MyHomePage>{
                                                 border: OutlineInputBorder(
                                                 ),
                                                 label: Text(
-                                                    "Ingresa el usuario"
+                                                    "Ingresa la contraseña"
                                                 ),
                                                 icon: Icon(
                                                   size: 20,
-                                                  Icons.account_circle,
+                                                  Icons.lock_rounded,
                                                   color: utils.Colors.azulitoArriba,
                                                 ),
                                               ),
+                                              obscureText: true,
                                             ),
                                           ),
                                           MaterialButton(
@@ -160,7 +161,7 @@ class MyHomePageState extends State<MyHomePage>{
                                             ),
                                               onPressed: (){
                                                 //Navigator.push(context, MaterialPageRoute(builder: (context) => apren_pony_lenguaje_real()));
-                                                Navigator.push(context, MaterialPageRoute(builder: (context) => principal()));
+                                                //Navigator.push(context, MaterialPageRoute(builder: (context) => principal()));
                                           }),
                                         ],
                                       ),

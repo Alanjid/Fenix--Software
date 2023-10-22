@@ -111,7 +111,7 @@ class _principalState extends State<principal> {
                       children: [
                         IconButton(
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => actividades_rutina_diaria()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => rutina_diaria()));
                           },
                           icon: Image.asset('assets/img/rutinadiaria.png'),
                           iconSize: 250,

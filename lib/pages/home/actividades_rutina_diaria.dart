@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:soundpool/soundpool.dart';
 import 'package:stroke_text/stroke_text.dart';
 import 'package:untitled/pages/home/act_afectividad.dart';
 import 'package:untitled/pages/home/aprende_poy_real.dart';
 import 'package:untitled/pages/home/grabar_instrucciones.dart';
 
+class rutina_diaria extends StatefulWidget {
+  @override
+  _actR_diariaState createState() => _actR_diariaState();
+}
 
-class actividades_rutina_diaria extends StatelessWidget {
+class _actR_diariaState extends State<rutina_diaria> {
   String texto_dictar="Realizamos las actividades de rutina diaria";
   String audioUrl="assets/audios/audio_rutina_diaria.mp3";
   ValueNotifier<bool> isAudioPlaying = ValueNotifier<bool>(false);
+
+  void initState() {
+    super.initState();
+    startTimer();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -123,5 +134,18 @@ class actividades_rutina_diaria extends StatelessWidget {
         ),
       ),
     );
+  }
+  Future<void> audioFondo() async {
+    Soundpool pool = Soundpool();
+
+    int soundId = await rootBundle.load(audioUrl).then((ByteData soundData) {
+      return pool.load(soundData);
+    });
+    int streamId = await pool.play(soundId);
+  }
+  void startTimer() {
+    Future.delayed(const Duration(seconds: 1), () {
+      audioFondo();
+    });
   }
 }
