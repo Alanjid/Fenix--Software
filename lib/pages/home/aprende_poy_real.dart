@@ -27,7 +27,7 @@ class afre extends State {
   }
   Widget build(BuildContext context) {
     if(visible==true && visible2==true && visible3==true && visible4==true) {
-      Future.delayed(Duration(seconds:2), () {
+      Future.delayed(Duration(seconds:1), () {
         Navigator.push(context, MaterialPageRoute(builder: (context) =>
             felicitacion(
                 photo: 'assets/img/felicitar.png', width: 400, heigth: 400)));

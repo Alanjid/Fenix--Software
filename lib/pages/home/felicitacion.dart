@@ -40,6 +40,7 @@ class felicitacion2 extends State {
         elevation: 0,
         toolbarHeight: 50,
         automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,

@@ -141,11 +141,11 @@ class info_pictogramas extends StatelessWidget{
                                            border: Border.all(color: Colors.black, width: 2.0), // Configura el borde negro
                                          ),
                                          child: Image(
-                                           image: AssetImage("assets/img/partes del cuerpo.png"),
+                                           image: AssetImage("assets/img/prendas.png"),
                                          ),
                                        ),
                                        SizedBox(width: 20,),
-                                       Text("PARTES DEL CUERPO"),
+                                       Text("PRENDAS DE VESTIR"),
                                      ],
                                    ),
                                    SizedBox(height: 138,),

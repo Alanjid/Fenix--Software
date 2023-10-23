@@ -1,11 +1,7 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:untitled/pages/home/act_afectividad.dart';
-import 'package:untitled/pages/home/actividades_rutina_diaria.dart';
-import 'package:untitled/pages/home/aprende_poy_real.dart';
 import 'package:untitled/pages/home/principal.dart';
-import 'package:untitled/pages/home/tareas_completadas.dart';
 import 'pantalla_de_carga.dart';
 import 'package:untitled/utils/colors.dart' as utils;
 class MyHomePage extends StatefulWidget {
@@ -16,6 +12,7 @@ class MyHomePage extends StatefulWidget {
 }
 class MyHomePageState extends State<MyHomePage>{
   bool isLoading = true;
+  bool _isPasswordVisible = true;
 
   final passwordController= TextEditingController();
   @override
@@ -127,27 +124,42 @@ class MyHomePageState extends State<MyHomePage>{
                                                   Icons.account_circle,
                                                   color: utils.Colors.azulitoArriba,
                                                 ),
+                                                hintText: "Ingresa el usuario"
                                               ),
+
                                             ),
                                           ),
-                                          const SizedBox(
+                                          SizedBox(
                                             width: 300,
                                             height: 80,
                                             child: TextField(
+                                              obscureText: _isPasswordVisible,
                                               decoration: InputDecoration(
-                                                border: OutlineInputBorder(
-                                                ),
-                                                label: Text(
-                                                    "Ingresa la contraseña"
-                                                ),
+                                                border: OutlineInputBorder(),
+                                                labelText: "Ingresa la contraseña",
                                                 icon: Icon(
-                                                  size: 20,
                                                   Icons.lock_rounded,
                                                   color: utils.Colors.azulitoArriba,
                                                 ),
+                                                errorText: "Debe contener letras, números y un símbolo",
+                                                errorStyle: TextStyle(
+                                                  color: Colors.red,
+                                                ),
+                                                hintText: "Ingresa la contraseña",
+                                                suffixIcon: IconButton(
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      _isPasswordVisible = !_isPasswordVisible;
+                                                    });
+                                                  },
+                                                  icon: _isPasswordVisible
+                                                      ? Icon(Icons.visibility)
+                                                      : Icon(Icons.visibility_off),
+                                                  color: utils.Colors.azulitoArriba,
+                                                ),
                                               ),
-                                              obscureText: true,
                                             ),
+
                                           ),
                                           MaterialButton(
                                             color: utils.Colors.azulitoArriba,
@@ -160,9 +172,34 @@ class MyHomePageState extends State<MyHomePage>{
                                               ),
                                             ),
                                               onPressed: (){
-                                                //Navigator.push(context, MaterialPageRoute(builder: (context) => apren_pony_lenguaje_real()));
-                                                //Navigator.push(context, MaterialPageRoute(builder: (context) => principal()));
-                                          }),
+                                                AwesomeDialog(
+                                                  context: context,
+                                                  dialogType: DialogType.info,
+                                                  animType: AnimType.scale,
+                                                  showCloseIcon: true,
+                                                  title: "Inicio Sesion",
+                                                  desc: "¿Quiere mantener la sesion iniciada?",
+                                                  btnCancelOnPress: (){
+                                                  
+                                                  },
+                                                  btnOkOnPress: (){
+                                                    AwesomeDialog(
+                                                      context: context,
+                                                      dialogType: DialogType.success,
+                                                      animType: AnimType.scale,
+                                                      showCloseIcon: true,
+                                                      title: "",
+                                                      desc: "Inicio de sesion correcto",
+                                                      btnOkOnPress: (){
+                                                        Navigator.push(context, MaterialPageRoute(builder: (context) => principal()));
+                                                      }
+                                                    ).show();
+
+                                                  },
+
+                                                ).show();
+                                              },
+                                          ),
                                         ],
                                       ),
                                   ),
@@ -184,4 +221,5 @@ class MyHomePageState extends State<MyHomePage>{
       ),
     );
   }
+
 }
