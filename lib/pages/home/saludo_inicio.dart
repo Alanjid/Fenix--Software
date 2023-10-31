@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stroke_text/stroke_text.dart';
+import 'package:untitled/pages/Widgets/Objetivos.dart';
 import 'package:untitled/pages/home/principal.dart';
 
 import 'grabar_instrucciones.dart';

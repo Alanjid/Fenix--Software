@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:soundpool/soundpool.dart';
 import 'package:stroke_text/stroke_text.dart';
-import 'package:untitled/pages/home/act_afectividad.dart';
-import 'package:untitled/pages/home/aprende_poy_real.dart';
+import 'package:untitled/pages/Actividades/act_afectividad.dart';
+import 'package:untitled/pages/Actividades/aprende_poy_real.dart';
 import 'package:untitled/pages/home/grabar_instrucciones.dart';
 
 class rutina_diaria extends StatefulWidget {

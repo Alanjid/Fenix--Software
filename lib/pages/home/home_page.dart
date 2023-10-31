@@ -1,6 +1,8 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:untitled/pages/Actividades/actividades_rutina_diaria.dart';
+import 'package:untitled/pages/home/niveles_de_actividades.dart';
 import 'package:untitled/pages/home/principal.dart';
 import 'package:untitled/pages/home/saludo_inicio.dart';
 import 'pantalla_de_carga.dart';
@@ -194,8 +196,8 @@ class MyHomePageState extends State<MyHomePage>{
                                                         title: "",
                                                         desc: "Inicio de sesion correcto",
                                                         btnOkOnPress: (){
-                                                          //Navigator.push(context, MaterialPageRoute(builder: (context) => principal()));
-                                                          Navigator.push(context, MaterialPageRoute(builder: (context) => saludo()));
+                                                          Navigator.push(context, MaterialPageRoute(builder: (context) => rutina_diaria()));
+                                                          //Navigator.push(context, MaterialPageRoute(builder: (context) => saludo()));
                                                         }
                                                     ).show();
 

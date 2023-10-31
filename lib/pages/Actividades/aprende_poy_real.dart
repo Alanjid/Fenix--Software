@@ -6,8 +6,8 @@ import 'package:stroke_text/stroke_text.dart';
 import 'package:soundpool/soundpool.dart';
 import 'package:untitled/pages/home/felicitacion.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'grabar_instrucciones.dart';
-import 'info_actividades.dart';
+import '../home/grabar_instrucciones.dart';
+import '../Widgets/info_actividades.dart';
 
 class apren_pony_lenguaje_real extends StatefulWidget {
   @override

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stroke_text/stroke_text.dart';
-import 'grabar_instrucciones.dart';
+import '../home/grabar_instrucciones.dart';
 class tareas_comp_diarias extends StatelessWidget {
 
   String Texto_TC="HAS COMPLETADO TUS ACTIVIDADES DEL DIA, VUELVE MAÑANA PARA SEGUIR TRABAJANDO.";

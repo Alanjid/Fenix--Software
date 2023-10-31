@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:soundpool/soundpool.dart';
 import 'package:stroke_text/stroke_text.dart';
-import 'package:untitled/pages/home/actividades_rutina_diaria.dart';
+import 'package:untitled/pages/Actividades/actividades_rutina_diaria.dart';
 import 'package:untitled/pages/home/grabar_instrucciones.dart';
 import 'package:flutter/widgets.dart';
-import 'package:untitled/pages/home/info_actividades.dart';
+import 'package:untitled/pages/Widgets/info_actividades.dart';
 import 'package:untitled/pages/home/niveles_de_actividades.dart';
 import 'package:untitled/utils/colors.dart' as utils;
 
